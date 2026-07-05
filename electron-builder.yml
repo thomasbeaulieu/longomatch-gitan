@@ -1,6 +1,5 @@
 appId: com.uslavalbasket.longomatch-gitan
 productName: Longomatch - Version Gitan
-publish: never
 directories:
   buildResources: build
   output: dist

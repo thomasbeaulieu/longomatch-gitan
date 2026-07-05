@@ -15,7 +15,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build:mac
+      - run: npx electron-vite build && npx electron-builder --mac --publish=never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
