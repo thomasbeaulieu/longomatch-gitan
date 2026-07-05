@@ -1,0 +1,26 @@
+appId: com.uslavalbasket.longomatch-gitan
+productName: Longomatch - Version Gitan
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+  - package.json
+win:
+  target: nsis
+  extraResources:
+    - from: node_modules/ffmpeg-static/ffmpeg.exe
+      to: ffmpeg/ffmpeg.exe
+    - from: node_modules/ffprobe-static/bin/win32/x64/ffprobe.exe
+      to: ffmpeg/ffprobe.exe
+mac:
+  target: dmg
+  category: public.app-category.sports
+  extraResources:
+    - from: node_modules/ffmpeg-static/ffmpeg
+      to: ffmpeg/ffmpeg
+    - from: node_modules/ffprobe-static/bin/darwin/${arch}/ffprobe
+      to: ffmpeg/ffprobe
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

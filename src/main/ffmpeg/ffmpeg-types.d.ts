@@ -1,0 +1,13 @@
+declare module 'ffmpeg-static' {
+  const path: string
+  export default path
+}
+
+declare module 'ffprobe-static' {
+  interface FfprobeStatic {
+    path: string
+    version: string
+  }
+  const ffprobeStatic: FfprobeStatic
+  export default ffprobeStatic
+}
