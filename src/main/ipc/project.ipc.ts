@@ -104,7 +104,8 @@ export function registerProjectIpcHandlers(): void {
   })
 
   ipcMain.handle(IpcChannels.projectDelete, (_event, id: number): void => {
+    const projectRow = getProject(id)
     deleteProject(id)
-    deleteProjectDataDir(id)
+    if (projectRow) deleteProjectDataDir(projectRow.name)
   })
 }

@@ -32,7 +32,7 @@ export function registerExportIpcHandlers(): void {
       throw new Error("Cet event n'a pas de fenêtre de clip définie")
     }
 
-    const clipsDir = getProjectClipsDir(project.id)
+    const clipsDir = getProjectClipsDir(project.name)
     const outputPath = join(clipsDir, `clip_${event.id}_${Date.now()}.mp4`)
 
     let overlayPngPath: string | undefined
@@ -74,7 +74,7 @@ export function registerExportIpcHandlers(): void {
       const project = getProject(firstEvent.project_id)
       if (!project) throw new Error('Projet introuvable')
 
-      const clipsDir = getProjectClipsDir(project.id)
+      const clipsDir = getProjectClipsDir(project.name)
       const tempClipPaths: string[] = []
 
       for (const item of items) {
@@ -113,7 +113,7 @@ export function registerExportIpcHandlers(): void {
       const events = listEventsByProject(input.projectId)
       const rows = computePlayerStatsRows(events, players)
 
-      const dataDir = getProjectDataDir(input.projectId)
+      const dataDir = getProjectDataDir(project.name)
       const ext = input.format === 'xlsx' ? 'xlsx' : 'csv'
       const filePath = join(dataDir, `stats_${Date.now()}.${ext}`)
 
