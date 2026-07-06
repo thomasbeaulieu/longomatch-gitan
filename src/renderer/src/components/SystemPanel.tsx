@@ -29,16 +29,11 @@ function SystemPanel({ onToggleSystem }: Props): ReactElement {
 
   return (
     <div className="system-panel">
-      <h3>Systèmes</h3>
-      <p className="system-hint">
-        {activeSystemId != null
-          ? "Système en cours — tague l'action qui conclut la possession pour clore le clip"
-          : "Clique un système au début de l'action offensive (rien à sélectionner en jeu libre)"}
-      </p>
+      <span className="system-panel-label">Systèmes</span>
 
       {activeSystemId != null && (
         <button className="system-clear-btn" onClick={clearActiveSystem}>
-          Annuler / Jeu libre
+          Jeu libre
         </button>
       )}
 
@@ -61,17 +56,18 @@ function SystemPanel({ onToggleSystem }: Props): ReactElement {
             </button>
           </li>
         ))}
-        {systems.length === 0 && <li className="system-empty">Aucun système pour l'instant.</li>}
       </ul>
 
       <div className="add-system-form">
         <input
           type="text"
-          placeholder="Nom du système (ex: Horns, Flex...)"
+          placeholder="Nom du système"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button onClick={handleAdd}>Ajouter système</button>
+        <button onClick={handleAdd} title="Ajouter système">
+          +
+        </button>
       </div>
     </div>
   )

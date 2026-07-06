@@ -9,9 +9,11 @@ export const DEFAULT_ROSTER: DefaultRosterPlayer[] = [
   { firstName: 'Louis', lastName: 'Le Carrer', position: 'SF' },
   { firstName: 'Romain', lastName: 'Grégoire', position: 'PF' },
   { firstName: 'Gaël', lastName: 'Gélu', position: 'PG' },
-  { firstName: 'Sandro', lastName: 'Perazza', position: 'PG' },
+  { firstName: 'Sandro', lastName: 'Perazza', position: 'SG' },
   { firstName: 'Michel', lastName: 'Nsimba', position: 'PF' },
-  { firstName: 'Alexis', lastName: 'Racine', position: 'SG' },
-  { firstName: 'Emryss', lastName: 'Mormin', position: 'PF' },
-  { firstName: 'Antoine', lastName: 'Belkessa', position: 'PG' }
+  { firstName: 'Alexis', lastName: 'Racine', position: 'SF' },
+  { firstName: 'Emryss', lastName: 'Mormin', position: 'C' },
+  { firstName: 'Antoine', lastName: 'Belkessa', position: 'SG' },
+  { firstName: 'Mohammed', lastName: 'Abdusalam', position: 'C' },
+  { firstName: 'Jamal', lastName: 'Hartwell II', position: 'PG' }
 ]

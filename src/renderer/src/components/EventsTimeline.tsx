@@ -68,7 +68,6 @@ function EventsTimeline({ onOpenPreview, onAnnotate }: Props): ReactElement {
               <span className="timeline-label">{e.eventTypeLabel}</span>
               <span className="timeline-player">{e.playerLabel ?? '—'}</span>
               {e.systemName && <span className="timeline-system">{e.systemName}</span>}
-              <span className="timeline-quarter">Q{e.quarter}</span>
               <button
                 className="timeline-annotate"
                 onClick={(evt) => {

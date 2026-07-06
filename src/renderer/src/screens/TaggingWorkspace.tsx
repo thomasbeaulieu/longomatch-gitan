@@ -22,7 +22,6 @@ function TaggingWorkspace(): ReactElement {
   const startSystem = useAppStore((s) => s.startSystem)
   const clearActiveSystem = useAppStore((s) => s.clearActiveSystem)
   const currentQuarter = useAppStore((s) => s.currentQuarter)
-  const setQuarter = useAppStore((s) => s.setQuarter)
   const addEvent = useAppStore((s) => s.addEvent)
   const addShot = useAppStore((s) => s.addShot)
   const addPlaylistItem = useAppStore((s) => s.addPlaylistItem)
@@ -156,19 +155,6 @@ function TaggingWorkspace(): ReactElement {
             Playlists
           </button>
         </div>
-        {tab === 'tagging' && (
-          <div className="quarter-selector">
-            {[1, 2, 3, 4].map((q) => (
-              <button
-                key={q}
-                className={q === currentQuarter ? 'quarter-btn active' : 'quarter-btn'}
-                onClick={() => setQuarter(q)}
-              >
-                Q{q}
-              </button>
-            ))}
-          </div>
-        )}
       </header>
 
       {tab === 'tagging' && !project.videoExists && (
@@ -193,13 +179,17 @@ function TaggingWorkspace(): ReactElement {
                 controls
                 className="video-player"
               />
-              <PlaybackSpeedControl videoRef={videoRef} />
+              <div className="video-controls-row">
+                <PlaybackSpeedControl videoRef={videoRef} />
+                <div className="system-panel-inline">
+                  <SystemPanel onToggleSystem={handleToggleSystem} />
+                </div>
+              </div>
               <EventButtonsPanel onTag={handleTag} />
             </div>
 
             <div className="workspace-sidebar">
               <PlayerRoster />
-              <SystemPanel onToggleSystem={handleToggleSystem} />
             </div>
           </div>
 
